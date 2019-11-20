@@ -111,7 +111,8 @@ class GumballMachine
 	    $stmt = $this->bdd->prepare("select max(id) as maximum from cours");
 	    $stmt->execute();
 		$user = $stmt->fetch();
-		// if($user['maximum'] == null)
+		if($user['maximum'] == null)
+			$user['maximum']= 0;
 	    return $user['maximum'];
 	}
 	
