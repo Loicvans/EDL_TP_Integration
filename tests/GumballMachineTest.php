@@ -54,8 +54,8 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
     }
     public function testD()
     {
-        $this->gumballMachineInstance->deletet();
-        
+        //$this->gumballMachineInstance->deletet();
+
     }
     public function testAffichageProfAVI()
     {
