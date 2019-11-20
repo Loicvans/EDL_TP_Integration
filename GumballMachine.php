@@ -30,7 +30,18 @@ class GumballMachine
 	        die('Erreur : ' . $e->getMessage());
 	    }
 	}
-
+	public function deletet()
+	{
+		try
+	    {
+		$stmt = $this->bdd->prepare("delete from prof");
+		$stmt->execute();
+		}
+		catch (Exception $e)
+	    {
+	        die('Erreur : ' . $e->getMessage());
+	    }
+	}
     public function getDB()
     {
         return $this->bdd;
