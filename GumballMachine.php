@@ -144,9 +144,10 @@ class GumballMachine
 	        return false;
 	    }
 	}
-	
-	public function DeleteP()
+	public function delete()
 	{
-	    
+		
 	}
+
+
 }
