@@ -84,10 +84,10 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
     {
        
         $max__id1=$this->gumballMachineInstance->GetLastIDC();
-        $this->assertEquals(true,$this->gumballMachineInstance->InsertC($this->intitule1,$this->duree1,$this->id_prof1));
-        $this->assertEquals(true,$this->gumballMachineInstance->InsertC($this->intitule2,$this->duree2,$this->id_prof2));
-        $this->assertEquals(true,$this->gumballMachineInstance->InsertC($this->intitule3,$this->duree3,$this->id_prof3));
-        $this->assertEquals(true,$this->gumballMachineInstance->InsertC($this->intitule4,$this->duree4,$this->id_prof4));
+        $this->assertEquals(true,$this->gumballMachineInstance->InsertC($this->intitule1,$this->duree1,$this->GetIdP($nom2,$prenom2)));
+        $this->assertEquals(true,$this->gumballMachineInstance->InsertC($this->intitule2,$this->duree2,$this->GetIdP($nom1,$prenom1)));
+        $this->assertEquals(true,$this->gumballMachineInstance->InsertC($this->intitule3,$this->duree3,$this->GetIdP($nom3,$prenom3)));
+        $this->assertEquals(true,$this->gumballMachineInstance->InsertC($this->intitule4,$this->duree4,$this->GetIdP($nom3,$prenom3)));
         $max__id2=$this->gumballMachineInstance->GetLastIDC();
         $this->assertEquals($max__id1+4,$max__id2);
         
