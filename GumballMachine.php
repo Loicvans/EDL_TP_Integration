@@ -22,7 +22,9 @@ class GumballMachine
 	        $sql="CREATE TABLE  IF NOT EXISTS prof( id INT NOT NULL AUTO_INCREMENT , nom VARCHAR(25) NOT NULL , prenom VARCHAR(25) NOT NULL , date_naissance DATE NOT NULL , lieu_naissance TEXT NOT NULL , PRIMARY KEY (id)) ";
 	        $this->bdd->exec($sql);
 	        $sql="CREATE TABLE  IF NOT EXISTS cours( id INT NOT NULL AUTO_INCREMENT , intitule VARCHAR(50) NOT NULL , duree INT NOT NULL , id_prof INT NOT NULL , PRIMARY KEY (id), FOREIGN KEY (id_prof) REFERENCES prof(id)) ";
-	        $this->bdd->exec($sql);
+			$this->bdd->exec($sql);
+			$sql="ALTER TABLE cours ADD FOREIGN KEY (id_prof) REFERENCES prof(id)";
+			$this->bdd->exec($sql)
 	    }
 	    
 	    catch (Exception $e)
@@ -66,7 +68,7 @@ class GumballMachine
 	    {
 	       $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	       $sql = "INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('$nom','$prenom', '$date_naissance','$lieu')";
-	       $bdd->exec($sql);
+		   $bdd->exec($sql);
 	       return true;
 	    }
 	    catch(PDOException $e)
@@ -76,6 +78,7 @@ class GumballMachine
 	    }
 	    
 	}
+	
 	
 	public function GetIdP($nom,$prenom)
 	{
@@ -98,7 +101,7 @@ class GumballMachine
 	    {
 	        $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	        $sql = "INSERT INTO cours (intitule, duree, id_prof) VALUES ('$intitule','$duree', '$id_prof')";
-	        $this->bdd->exec($sql);
+			$this->bdd->exec($sql);
 	        return "good job";
 	    }
 	    catch(PDOException $e)
