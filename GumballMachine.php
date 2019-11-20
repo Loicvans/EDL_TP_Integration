@@ -23,8 +23,6 @@ class GumballMachine
 	        $this->bdd->exec($sql);
 	        $sql="CREATE TABLE  IF NOT EXISTS cours( id INT NOT NULL AUTO_INCREMENT , intitule VARCHAR(50) NOT NULL , duree INT NOT NULL , id_prof INT NOT NULL , PRIMARY KEY (id), FOREIGN KEY (id_prof) REFERENCES prof(id)) ";
 			$this->bdd->exec($sql);
-			$sql="ALTER TABLE cours ADD FOREIGN KEY (id_prof) REFERENCES prof(id)";
-			$this->bdd->exec($sql)
 	    }
 	    
 	    catch (Exception $e)
