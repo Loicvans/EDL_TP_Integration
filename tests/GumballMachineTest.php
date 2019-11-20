@@ -25,6 +25,13 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
     private $prenom3="YYY3";
     private $date_naissance3="1982-12-31";
     private $lieu_naissance3="ZZZ3"; 
+
+    // Pour update
+    //Prof 4
+    private $nom3bis="XXX3";
+    private $prenom3bis="YYY3";
+    private $date_naissance3bis="1983-12-31";
+    private $lieu_naissance3bis="ZZZ3"; 
     
     
     // cours
@@ -46,17 +53,24 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
     private $intitule4="EDL"; 
     private $duree4="30";    
     private $id_prof4="XXX3 YYY3";
+    // Pour update
+    // cours5
+    private $intitule5="C++"; 
+    private $duree5="30";    
+    private $id_prof5="XXX3 YYY3";
     
         
     public function setUp()
     {
         $this->gumballMachineInstance = new GumballMachine();
     }
+
     public function testD()
     {
         //$this->gumballMachineInstance->deletet();
 
     }
+
     public function testAffichageProfAVI()
     {
         $this->assertEquals(true,$this->gumballMachineInstance->AffichageProf("Before Insertion of Professors"));
@@ -97,5 +111,8 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
         /*� completer*/
     }
 
+    public function testUpdateP(){
+        $this->assertEquals(true, $this->gumballMachineInstance->UpdateP($this->gumballMachineInstance->getDB(), $this->gumbalMachineInstance->GetIdP($this->nom3, $this->prenom3, $this->nom3bis, $this->prenom3bis, $this->date_naissance3bis, $this->lieu_naissance3bis))
+    }
    
 }

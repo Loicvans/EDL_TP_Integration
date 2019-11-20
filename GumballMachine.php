@@ -30,7 +30,7 @@ class GumballMachine
 	        die('Erreur : ' . $e->getMessage());
 	    }
 	}
-	public function deletet()
+	public function delete()
 	{
 		try
 	    {
@@ -108,7 +108,8 @@ class GumballMachine
 	{
 	    $stmt = $this->bdd->prepare("select max(id) as maximum from cours");
 	    $stmt->execute();
-	    $user = $stmt->fetch();
+		$user = $stmt->fetch();
+		// if($user['maximum'] == null)
 	    return $user['maximum'];
 	}
 	
@@ -128,9 +129,20 @@ class GumballMachine
 	    
 	}
 	
-	public function UpdateP()
+	public function UpdateP($bdd, $id, $nom, $prenom , $date_naissance,$lieu)
 	{
-	    
+	    try 
+	    {
+	       $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	       $sql = "UPDATE prof SET (nom, prenom, date_naissance, lieu_naissance) VALUES ('$nom','$prenom', '$date_naissance','$lieu') WHERE id = $id";
+		   $bdd->exec($sql);
+	       return true;
+	    }
+	    catch(PDOException $e)
+	    {
+	        echo $sql . "<br>" . $e->getMessage();
+	        return false;
+	    }
 	}
 	
 	public function DeleteP()
