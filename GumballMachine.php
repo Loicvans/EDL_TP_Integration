@@ -34,6 +34,8 @@ class GumballMachine
 	{
 		try
 	    {
+		$stmt = $this->bdd->prepare("delete from cours");
+		$stmt->execute();
 		$stmt = $this->bdd->prepare("delete from prof");
 		$stmt->execute();
 		}
