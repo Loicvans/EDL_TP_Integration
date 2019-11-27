@@ -25,13 +25,19 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
     private $prenom3="YYY3";
     private $date_naissance3="1982-12-31";
     private $lieu_naissance3="ZZZ3"; 
+    //prof4
+    private $nom4="XXX4";
+    private $prenom4="YYY4";
+    private $date_naissance4="1985-12-31";
+    private $lieu_naissance4="ZZZ4"; 
 
     // Pour update
-    //Prof 4
-    private $nom3bis="XXX3";
-    private $prenom3bis="YYY3";
-    private $date_naissance3bis="1983-12-31";
-    private $lieu_naissance3bis="ZZZ3"; 
+    //Prof 4 bis
+    private $nom3bis="XXX4";
+    private $prenom3bis="YYY4";
+    private $date_naissance3bis="1985-12-31";
+    private $lieu_naissance3bis="AAA4"; 
+
 
     
     
@@ -83,8 +89,9 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(true,$this->gumballMachineInstance->InsertP($this->gumballMachineInstance->getDB(),$this->nom1,$this->prenom1,$this->date_naissance1,$this->lieu_naissance1));
         $this->assertEquals(true,$this->gumballMachineInstance->InsertP($this->gumballMachineInstance->getDB(),$this->nom2,$this->prenom2,$this->date_naissance2,$this->lieu_naissance2));
         $this->assertEquals(true,$this->gumballMachineInstance->InsertP($this->gumballMachineInstance->getDB(),$this->nom3,$this->prenom3,$this->date_naissance3,$this->lieu_naissance3));
+        $this->assertEquals(true,$this->gumballMachineInstance->InsertP($this->gumballMachineInstance->getDB(),$this->nom4,$this->prenom4,$this->date_naissance4,$this->lieu_naissance4));
         $max__id2=$this->gumballMachineInstance->GetLastIDP();
-        $this->assertEquals($max__id1+3,$max__id2);
+        $this->assertEquals($max__id1+4,$max__id2);
     }
     public function testAffichageProfAPI()
     {
@@ -115,7 +122,7 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
 
     public function testUpdateP()
     {
-        $this->assertEquals(true, $this->gumballMachineInstance->UpdateP($this->gumballMachineInstance->getDB(), $this->nom3bis,$this->prenom3bis,$this->date_naissance3bis,$this->lieu_naissance3bis, $this->gumballMachineInstance->GetIdP($this->nom3,$this->prenom3)));
+        $this->assertEquals(true, $this->gumballMachineInstance->UpdateP($this->gumballMachineInstance->getDB(), $this->nom4bis,$this->prenom4bis,$this->date_naissance4bis,$this->lieu_naissance4bis, $this->gumballMachineInstance->GetIdP($this->nom4,$this->prenom4)));
     }
 
     public function testDProf()
