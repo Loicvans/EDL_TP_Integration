@@ -75,7 +75,7 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
 
     public function testD()
     {
-        $this->gumballMachineInstance->delete();
+        //$this->gumballMachineInstance->delete();
 
     }
 
