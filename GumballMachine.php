@@ -147,9 +147,35 @@ class GumballMachine
 	        return false;
 	    }
 	}
-	public function deleteP()
+	public function deleteP($bdd, $id)
 	{
-
+		try 
+	    {
+	       $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	       $sql = "DELETE FROM prof WHERE id = '$id'";
+		   $bdd->exec($sql);
+	       return true;
+	    }
+	    catch(PDOException $e)
+	    {
+	        echo $sql . "<br>" . $e->getMessage();
+	        return false;
+		}
+	}
+	public function UpdateC($bdd, $intitule, $duree , $id_prof)
+	{
+	    try 
+	    {
+	       $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	       $sql = "UPDATE cours SET intitule='$intitule', duree='$duree', id_prof='$id_prof' WHERE intitule = '$intitule'";
+		   $bdd->exec($sql);
+	       return true;
+	    }
+	    catch(PDOException $e)
+	    {
+	        echo $sql . "<br>" . $e->getMessage();
+	        return false;
+		}
 	}
 
 

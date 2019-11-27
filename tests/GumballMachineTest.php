@@ -32,6 +32,8 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
     private $prenom3bis="YYY3";
     private $date_naissance3bis="1983-12-31";
     private $lieu_naissance3bis="ZZZ3"; 
+
+    
     
     
     // cours
@@ -115,5 +117,14 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
     {
         $this->assertEquals(true, $this->gumballMachineInstance->UpdateP($this->gumballMachineInstance->getDB(), $this->nom3bis,$this->prenom3bis,$this->date_naissance3bis,$this->lieu_naissance3bis, $this->gumballMachineInstance->GetIdP($this->nom3,$this->prenom3)));
     }
+
+    public function testDProf()
+    {
+        $this->assertEquals(true, $this->gumballMachineInstance->deleteP($this->gumballMachineInstance->getDB(), $this->gumballMachineInstance->GetIdP($this->nom2,$this->prenom2)));
+    }
    
+    public function testUpdateC()
+    {
+        $this->assertEquals(true, $this->gumballMachineInstance->UpdateP($this->gumballMachineInstance->getDB(), $this->intitule5,$this->duree5,$this->id_prof5));
+    }
 }
