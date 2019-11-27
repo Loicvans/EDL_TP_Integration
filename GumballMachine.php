@@ -188,7 +188,7 @@ class GumballMachine
 		try 
 	    {
 	       $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	       $sql = "DELETE FROM cours WHERE intitule='$intitule";
+	       $sql = "DELETE FROM cours WHERE intitule='$intitule'";
 		   $bdd->exec($sql);
 	       return true;
 	    }
