@@ -34,14 +34,15 @@ class GumballMachine
 	{
 		try
 	    {
+		$stmt = $this->bdd->prepare("ALTER TABLE cours AUTO_INCREMENT = 1")
+		$stmt->execute();
 		$stmt = $this->bdd->prepare("delete from cours");
 		$stmt->execute();
-		$stmt = $this->bdd->prepare("ALTER TABLE cours AUTO_INCREMENT = 1")
+		$stmt = $this->bdd->prepare("ALTER TABLE prof AUTO_INCREMENT = 1")
 		$stmt->execute();
 		$stmt = $this->bdd->prepare("delete from prof");
 		$stmt->execute();
-		$stmt = $this->bdd->prepare("ALTER TABLE cours AUTO_INCREMENT = 1")
-		$stmt->execute();
+		
 		}
 		catch (Exception $e)
 	    {
