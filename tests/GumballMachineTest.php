@@ -33,10 +33,10 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
 
     // Pour update
     //Prof 4 bis
-    private $nom3bis="XXX4";
-    private $prenom3bis="YYY4";
-    private $date_naissance3bis="1985-12-31";
-    private $lieu_naissance3bis="AAA4"; 
+    private $nom4bis="XXX4";
+    private $prenom4bis="YYY4";
+    private $date_naissance4bis="1985-12-31";
+    private $lieu_naissance4bis="AAA4"; 
 
 
     
